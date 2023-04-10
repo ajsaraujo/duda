@@ -1,0 +1,44 @@
+body {
+  font-family: "Arial", sans-serif;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+.parent-container {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+}
+
+label {
+  font-size: 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.form-field {
+  margin-bottom: 40px;
+}
+
+.form-field:last-of-type {
+  margin-bottom: 40px;
+}
+
+input {
+  height: 32px;
+}
+
+button {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 16px;
+}

@@ -9,8 +9,11 @@ type Inputs = {
 };
 
 function App() {
-  const [inputs, setInputs] = useState<Inputs>({ firstPage: "", lastPage: "" });
-  const [submitted, setSubmitted] = useState(false);
+  const [inputs, setInputs] = useState<Inputs>({
+    firstPage: "1",
+    lastPage: "10",
+  });
+  const [submitted, setSubmitted] = useState(true);
 
   function handleSubmit() {
     setSubmitted(true);
@@ -51,33 +54,39 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Duda's</h1>
+    <div className="parent-container">
+      <header>
+        <h1 className="title">Duda's</h1>
+      </header>
 
-      <div>
-        <div>
-          <label htmlFor="firstPage">Primeira página</label>
-          <input
-            id="firstPage"
-            value={inputs.firstPage}
-            onChange={handlePageChange("firstPage")}
-          ></input>
+      <div className="middle-container">
+        <div className="form">
+          <div className="form-field">
+            <label htmlFor="firstPage">Primeira página</label>
+            <input
+              id="firstPage"
+              value={inputs.firstPage}
+              onChange={handlePageChange("firstPage")}
+            ></input>
+          </div>
+
+          <div className="form-field">
+            <label htmlFor="lastPage">Última página</label>
+            <input
+              id="lastPage"
+              value={inputs.lastPage}
+              onChange={handlePageChange("lastPage")}
+            ></input>
+          </div>
+
+          <button className="list-pages-button" onClick={handleSubmit}>
+            Listar páginas
+          </button>
         </div>
 
         <div>
-          <label htmlFor="lastPage">Última página</label>
-          <input
-            id="lastPage"
-            value={inputs.lastPage}
-            onChange={handlePageChange("lastPage")}
-          ></input>
+          <Result submitted={submitted} inputs={inputs}></Result>
         </div>
-
-        <button onClick={handleSubmit}>Listar páginas</button>
-      </div>
-
-      <div>
-        <Result submitted={submitted} inputs={inputs}></Result>
       </div>
     </div>
   );
