@@ -16,6 +16,11 @@ function App() {
     setSubmitted(true);
   }
 
+  function clear() {
+    setSubmitted(false);
+    setInputs({ firstPage: "", lastPage: "" });
+  }
+
   function handlePageChange(page: keyof Inputs) {
     return function handleSpecificPageChange(
       event: React.ChangeEvent<HTMLInputElement>
@@ -40,6 +45,7 @@ function App() {
       <>
         <PagesListing pages={firstList}></PagesListing>
         <PagesListing pages={secondList}></PagesListing>
+        <button onClick={clear}>Limpar</button>
       </>
     );
   }
