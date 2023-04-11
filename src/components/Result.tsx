@@ -7,6 +7,7 @@ export function Result(props: {
   inputs: Inputs;
   setSubmitted: (bool: boolean) => void;
   setInputs: (inputs: Inputs) => void;
+  showToast: (message: string) => void;
 }) {
   const { setSubmitted, setInputs, inputs } = props;
 
@@ -27,10 +28,16 @@ export function Result(props: {
       </p>
 
       <div className="first-pages-listing">
-        <PagesListing pages={firstList}></PagesListing>
+        <PagesListing
+          pages={firstList}
+          showToast={props.showToast}
+        ></PagesListing>
       </div>
 
-      <PagesListing pages={secondList}></PagesListing>
+      <PagesListing
+        pages={secondList}
+        showToast={props.showToast}
+      ></PagesListing>
 
       <button className="primary-button reset-button" onClick={clear}>
         Recomeçar

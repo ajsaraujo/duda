@@ -15,6 +15,7 @@ function App() {
     lastPage: "10",
   });
   const [submitted, setSubmitted] = useState(true);
+  const [toast, setToast] = useState({ visible: false, message: "" });
 
   function handleSubmit() {
     setSubmitted(true);
@@ -26,6 +27,14 @@ function App() {
     ) {
       setInputs({ ...inputs, [page]: event.target.value });
     };
+  }
+
+  function hideToast() {
+    setToast({ visible: false, message: "" });
+  }
+
+  function showToast(message: string) {
+    setToast({ visible: true, message });
   }
 
   return (
@@ -48,15 +57,16 @@ function App() {
               inputs={inputs}
               setInputs={setInputs}
               setSubmitted={setSubmitted}
+              showToast={showToast}
             ></Result>
           )}
         </div>
       </div>
 
       <Toast
-        message="Por favorzinho, informe a primeira e última página."
-        onClickOk={() => {}}
-        visible={true}
+        message={toast.message}
+        visible={toast.visible}
+        onClickOk={hideToast}
       ></Toast>
     </div>
   );

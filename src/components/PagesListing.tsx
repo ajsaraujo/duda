@@ -3,13 +3,17 @@ import { areOdd } from "../utils/areOdd";
 import { copyToClipboard } from "../utils/copyToClipboard";
 import { formatPageList } from "../utils/formatPageList";
 
-export function PagesListing(props: { pages: number[] }) {
+export function PagesListing(props: {
+  pages: number[];
+  showToast: (message: string) => void;
+}) {
   const label = areOdd(props.pages) ? "Ímpares" : "Pares";
   const labelAndQuantity = `${label} (${props.pages.length})`;
   const formattedPageList = formatPageList(props.pages);
 
   function copyPageList() {
     copyToClipboard(formattedPageList);
+    props.showToast(`As páginas ${label} foram copiadas.`);
   }
 
   return (
