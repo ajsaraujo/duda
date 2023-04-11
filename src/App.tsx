@@ -3,6 +3,7 @@ import "./App.css";
 import { PagesListing } from "./components/PagesListing";
 import { listPages } from "./utils/listPages";
 import { InitialForm } from "./components/InitialForm";
+import { Result } from "./components/Result";
 
 export type Inputs = {
   firstPage: string;
@@ -20,38 +21,12 @@ function App() {
     setSubmitted(true);
   }
 
-  function clear() {
-    setSubmitted(false);
-    setInputs({ firstPage: "", lastPage: "" });
-  }
-
   function handlePageChange(page: keyof Inputs) {
     return function handleSpecificPageChange(
       event: React.ChangeEvent<HTMLInputElement>
     ) {
       setInputs({ ...inputs, [page]: event.target.value });
     };
-  }
-
-  function Result(props: { submitted: boolean; inputs: Inputs }) {
-    const { submitted, inputs } = props;
-
-    if (!submitted) {
-      return null;
-    }
-
-    const [firstList, secondList] = listPages(
-      +inputs.firstPage,
-      +inputs.lastPage
-    );
-
-    return (
-      <>
-        <PagesListing pages={firstList}></PagesListing>
-        <PagesListing pages={secondList}></PagesListing>
-        <button onClick={clear}>Limpar</button>
-      </>
-    );
   }
 
   return (
@@ -62,15 +37,20 @@ function App() {
         </header>
 
         <div className="middle-container">
-          <InitialForm
-            inputs={inputs}
-            handlePageChange={handlePageChange}
-            handleSubmit={handleSubmit}
-          ></InitialForm>
-
-          <div>
-            <Result submitted={submitted} inputs={inputs}></Result>
-          </div>
+          {!submitted ? (
+            <InitialForm
+              inputs={inputs}
+              handlePageChange={handlePageChange}
+              handleSubmit={handleSubmit}
+            ></InitialForm>
+          ) : (
+            <Result
+              submitted={submitted}
+              inputs={inputs}
+              setInputs={setInputs}
+              setSubmitted={setSubmitted}
+            ></Result>
+          )}
         </div>
       </div>
     </div>
