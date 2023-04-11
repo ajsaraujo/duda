@@ -1,3 +1,4 @@
+import "../App.css";
 import { areOdd } from "../utils/are-odd";
 import { formatPageList } from "../utils/formatPageList";
 

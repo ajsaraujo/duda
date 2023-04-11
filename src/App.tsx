@@ -10,10 +10,10 @@ type Inputs = {
 
 function App() {
   const [inputs, setInputs] = useState<Inputs>({
-    firstPage: "1",
-    lastPage: "10",
+    firstPage: "",
+    lastPage: "",
   });
-  const [submitted, setSubmitted] = useState(true);
+  const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit() {
     setSubmitted(true);
@@ -54,38 +54,43 @@ function App() {
   }
 
   return (
-    <div className="parent-container">
-      <header>
-        <h1 className="title">Duda's</h1>
-      </header>
+    <div className="center-parent-container">
+      <div className="parent-container">
+        <header>
+          <h1 className="title">Duda's</h1>
+        </header>
 
-      <div className="middle-container">
-        <div className="form">
-          <div className="form-field">
-            <label htmlFor="firstPage">Primeira página</label>
-            <input
-              id="firstPage"
-              value={inputs.firstPage}
-              onChange={handlePageChange("firstPage")}
-            ></input>
+        <div className="middle-container">
+          <div className="form">
+            <div className="form-field">
+              <label htmlFor="firstPage">Primeira página</label>
+              <input
+                id="firstPage"
+                value={inputs.firstPage}
+                onChange={handlePageChange("firstPage")}
+              ></input>
+            </div>
+
+            <div className="form-field">
+              <label htmlFor="lastPage">Última página</label>
+              <input
+                id="lastPage"
+                value={inputs.lastPage}
+                onChange={handlePageChange("lastPage")}
+              ></input>
+            </div>
+
+            <button
+              className="primary-button list-pages"
+              onClick={handleSubmit}
+            >
+              Listar páginas
+            </button>
           </div>
 
-          <div className="form-field">
-            <label htmlFor="lastPage">Última página</label>
-            <input
-              id="lastPage"
-              value={inputs.lastPage}
-              onChange={handlePageChange("lastPage")}
-            ></input>
+          <div>
+            <Result submitted={submitted} inputs={inputs}></Result>
           </div>
-
-          <button className="list-pages-button" onClick={handleSubmit}>
-            Listar páginas
-          </button>
-        </div>
-
-        <div>
-          <Result submitted={submitted} inputs={inputs}></Result>
         </div>
       </div>
     </div>
