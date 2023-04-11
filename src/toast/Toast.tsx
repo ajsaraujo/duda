@@ -11,8 +11,8 @@ export function Toast(props: {
 
   return (
     <div className="toast">
-      <p>{props.message}</p>
-      <button className="text-button" onClick={onClickOk}>
+      <p>{message}</p>
+      <button className="text-button toast-ok-button" onClick={onClickOk}>
         Tá bem
       </button>
     </div>
