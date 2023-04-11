@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import { InitialForm } from "./components/InitialForm";
 import { Result } from "./components/Result";
+import { Toast } from "./toast/Toast";
 
 export type Inputs = {
   firstPage: string;
@@ -51,6 +52,12 @@ function App() {
           )}
         </div>
       </div>
+
+      <Toast
+        message="Por favorzinho, informe a primeira e última página."
+        onClickOk={() => {}}
+        visible={true}
+      ></Toast>
     </div>
   );
 }
