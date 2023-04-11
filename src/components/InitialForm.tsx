@@ -20,6 +20,7 @@ export function InitialForm(props: {
             value={inputs.firstPage}
             onChange={handlePageChange("firstPage")}
             autoComplete="off"
+            inputMode="numeric"
           ></input>
         </div>
 
@@ -30,6 +31,7 @@ export function InitialForm(props: {
             value={inputs.lastPage}
             onChange={handlePageChange("lastPage")}
             autoComplete="off"
+            inputMode="numeric"
           ></input>
         </div>
 
