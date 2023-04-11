@@ -68,6 +68,7 @@ function App() {
                 id="firstPage"
                 value={inputs.firstPage}
                 onChange={handlePageChange("firstPage")}
+                autoComplete="none"
               ></input>
             </div>
 
@@ -77,6 +78,7 @@ function App() {
                 id="lastPage"
                 value={inputs.lastPage}
                 onChange={handlePageChange("lastPage")}
+                autoComplete="none"
               ></input>
             </div>
 
