@@ -14,7 +14,7 @@ export function PagesListing(props: {
 
   function copyPageList() {
     copyToClipboard(formattedPageList);
-    props.showToast(`As páginas ${label} foram copiadas.`);
+    props.showToast(`As páginas ${label.toLowerCase()} foram copiadas.`);
   }
 
   return (
