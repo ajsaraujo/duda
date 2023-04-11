@@ -7,14 +7,23 @@ import icon from "./icon-copy.svg";
 export function PagesListing(props: {
   pages: number[];
   showToast: (message: string) => void;
+  hideToast: () => void;
 }) {
   const label = areOdd(props.pages) ? "Ímpares" : "Pares";
   const labelAndQuantity = `${label} (${props.pages.length})`;
   const formattedPageList = formatPageList(props.pages);
 
+  let timeout: NodeJS.Timeout;
+
   function copyPageList() {
     copyToClipboard(formattedPageList);
     props.showToast(`As páginas ${label.toLowerCase()} foram copiadas.`);
+
+    if (timeout) {
+      timeout.refresh();
+    } else {
+      timeout = setTimeout(props.hideToast, 2000);
+    }
   }
 
   return (

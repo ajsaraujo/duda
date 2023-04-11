@@ -33,12 +33,14 @@ export function Result(props: {
         <PagesListing
           pages={firstList}
           showToast={props.showToast}
+          hideToast={props.hideToast}
         ></PagesListing>
       </div>
 
       <PagesListing
         pages={secondList}
         showToast={props.showToast}
+        hideToast={props.hideToast}
       ></PagesListing>
 
       <button className="primary-button reset-button" onClick={clear}>
