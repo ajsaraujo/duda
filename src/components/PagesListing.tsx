@@ -12,11 +12,12 @@ export function PagesListing(props: {
   const label = areOdd(props.pages) ? "Ímpares" : "Pares";
   const labelAndQuantity = `${label} (${props.pages.length})`;
   const formattedPageList = formatPageList(props.pages);
+  const fullPageList = props.pages.join(", ");
 
   let timeout: NodeJS.Timeout;
 
   function copyPageList() {
-    copyToClipboard(formattedPageList);
+    copyToClipboard(fullPageList);
     props.showToast(`As páginas ${label.toLowerCase()} foram copiadas.`);
 
     if (timeout) {
