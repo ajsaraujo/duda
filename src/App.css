@@ -3,6 +3,7 @@
 :root {
   --light-pink: #ff93d4;
   --medium-pink: #ea008d;
+  --light-grey: #adadad;
   --medium-grey: #7d7d7d;
 }
 
@@ -37,7 +38,6 @@ button {
 
 .parent-container {
   background-color: white;
-  max-width: 425px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   padding: 32px 72px;
@@ -46,7 +46,6 @@ button {
 
 .title {
   margin: 0;
-  margin-bottom: 48px;
   text-align: center;
 }
 
@@ -54,6 +53,10 @@ button {
   display: flex;
   flex-direction: column;
   margin-bottom: 24px;
+}
+
+.form-field:first-of-type {
+  margin-top: 48px;
 }
 
 .form-field label {
@@ -87,4 +90,55 @@ button {
 
 .list-pages {
   margin-top: 48px;
+}
+
+.text-secondary {
+  font-weight: 600;
+  color: var(--light-grey);
+  font-size: 14px;
+}
+
+.listing-pages {
+  margin-top: 16px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.listing-label {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.page-list {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  min-width: 200px;
+  min-height: 48px;
+  display: block;
+}
+
+.reset-button {
+  margin-top: 40px;
+}
+
+.pages-listing-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  column-gap: 32px;
+}
+
+.round-button {
+  background-color: var(--light-pink);
+  border-radius: 100%;
+  width: 44px;
+  height: 44px;
+}
+
+.first-pages-listing {
+  margin-bottom: 24px;
 }

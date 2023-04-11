@@ -22,9 +22,19 @@ export function Result(props: {
 
   return (
     <>
-      <PagesListing pages={firstList}></PagesListing>
+      <p className="text-secondary listing-pages">
+        Listando páginas de {inputs.firstPage} a {inputs.lastPage}
+      </p>
+
+      <div className="first-pages-listing">
+        <PagesListing pages={firstList}></PagesListing>
+      </div>
+
       <PagesListing pages={secondList}></PagesListing>
-      <button onClick={clear}>Limpar</button>
+
+      <button className="primary-button reset-button" onClick={clear}>
+        Recomeçar
+      </button>
     </>
   );
 }

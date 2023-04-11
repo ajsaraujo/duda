@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./App.css";
-import { PagesListing } from "./components/PagesListing";
-import { listPages } from "./utils/listPages";
 import { InitialForm } from "./components/InitialForm";
 import { Result } from "./components/Result";
 
@@ -12,10 +10,10 @@ export type Inputs = {
 
 function App() {
   const [inputs, setInputs] = useState<Inputs>({
-    firstPage: "",
-    lastPage: "",
+    firstPage: "1",
+    lastPage: "10",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState(true);
 
   function handleSubmit() {
     setSubmitted(true);
