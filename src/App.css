@@ -200,7 +200,7 @@ button {
 
 .toast-transition-enter-active {
   transform: none;
-  transition: transform 400ms;
+  transition: transform 200ms;
 }
 
 .toast-transition-exit {
@@ -209,7 +209,7 @@ button {
 
 .toast-transition-exit-active {
   transform: translateX(calc(100% + 16px));
-  transition: transform 400ms;
+  transition: transform 200ms;
 }
 
 .toast-transition-exit-done {
@@ -227,7 +227,7 @@ button {
 
   .toast-transition-enter-active {
     transform: none;
-    transition: transform 400ms;
+    transition: transform 200ms;
   }
 
   .toast-transition-exit {
@@ -236,7 +236,7 @@ button {
 
   .toast-transition-exit-active {
     transform: translateY(calc(100% + 16px));
-    transition: transform 400ms;
+    transition: transform 200ms;
   }
 
   .toast-transition-exit-done {

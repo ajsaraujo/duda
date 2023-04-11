@@ -8,12 +8,14 @@ export function Result(props: {
   setSubmitted: (bool: boolean) => void;
   setInputs: (inputs: Inputs) => void;
   showToast: (message: string) => void;
+  hideToast: () => void;
 }) {
   const { setSubmitted, setInputs, inputs } = props;
 
   function clear() {
     setSubmitted(false);
     setInputs({ firstPage: "", lastPage: "" });
+    props.hideToast();
   }
 
   const [firstList, secondList] = listPages(

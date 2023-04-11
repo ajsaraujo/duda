@@ -39,6 +39,7 @@ function App() {
       return;
     }
 
+    hideToast();
     setSubmitted(true);
   }
 
@@ -63,7 +64,7 @@ function App() {
 
     setTimeout(() => {
       setToast({ visible: true, message, okButtonLabel });
-    }, 600);
+    }, 200);
   }
 
   return (
@@ -87,6 +88,7 @@ function App() {
               setInputs={setInputs}
               setSubmitted={setSubmitted}
               showToast={showToast}
+              hideToast={hideToast}
             ></Result>
           )}
         </div>
