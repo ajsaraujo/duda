@@ -11,14 +11,39 @@ export type Inputs = {
 
 function App() {
   const [inputs, setInputs] = useState<Inputs>({
-    firstPage: "1",
-    lastPage: "10",
+    firstPage: "",
+    lastPage: "",
   });
-  const [submitted, setSubmitted] = useState(true);
-  const [toast, setToast] = useState({ visible: false, message: "" });
+  const [submitted, setSubmitted] = useState(false);
+  const [toast, setToast] = useState({
+    visible: false,
+    message: "",
+    okButtonLabel: "",
+  });
 
   function handleSubmit() {
+    const { firstPage, lastPage } = inputs;
+
+    if (!firstPage || !lastPage) {
+      showToast("Por favorzinho, informe a primeira e última página.");
+      return;
+    }
+
+    if (!isNumeric(firstPage) || !isNumeric(lastPage)) {
+      showToast("Seu bobinho... você deve inserir apenas números!");
+      return;
+    }
+
+    if (+firstPage > +lastPage) {
+      showToast("Eita. A primeira página é depois da última?", "Não...");
+      return;
+    }
+
     setSubmitted(true);
+  }
+
+  function isNumeric(input: string) {
+    return !isNaN(Number(input));
   }
 
   function handlePageChange(page: keyof Inputs) {
@@ -30,11 +55,11 @@ function App() {
   }
 
   function hideToast() {
-    setToast({ visible: false, message: "" });
+    setToast({ visible: false, message: "", okButtonLabel: "" });
   }
 
-  function showToast(message: string) {
-    setToast({ visible: true, message });
+  function showToast(message: string, okButtonLabel: string = "Tá bem") {
+    setToast({ visible: true, message, okButtonLabel });
   }
 
   return (
@@ -66,6 +91,7 @@ function App() {
       <Toast
         message={toast.message}
         visible={toast.visible}
+        okButtonLabel={toast.okButtonLabel}
         onClickOk={hideToast}
       ></Toast>
     </div>

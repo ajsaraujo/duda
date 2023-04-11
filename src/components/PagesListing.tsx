@@ -2,6 +2,7 @@ import "../App.css";
 import { areOdd } from "../utils/areOdd";
 import { copyToClipboard } from "../utils/copyToClipboard";
 import { formatPageList } from "../utils/formatPageList";
+import icon from "./icon-copy.svg";
 
 export function PagesListing(props: {
   pages: number[];
@@ -23,7 +24,9 @@ export function PagesListing(props: {
         <span className="page-list">{formattedPageList}</span>
       </div>
 
-      <button className="round-button" onClick={copyPageList}></button>
+      <button className="round-button" onClick={copyPageList}>
+        <img src={icon} className="white-icon icon"></img>
+      </button>
     </div>
   );
 }
