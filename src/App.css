@@ -215,3 +215,31 @@ button {
 .toast-transition-exit-done {
   transform: translateX(calc(100% + 16px));
 }
+
+@media (max-width: 1200px) {
+  .toast {
+    bottom: 16px;
+  }
+
+  .toast-transition-enter {
+    transform: translateY(calc(100% + 16px));
+  }
+
+  .toast-transition-enter-active {
+    transform: none;
+    transition: transform 400ms;
+  }
+
+  .toast-transition-exit {
+    transform: none;
+  }
+
+  .toast-transition-exit-active {
+    transform: translateY(calc(100% + 16px));
+    transition: transform 400ms;
+  }
+
+  .toast-transition-exit-done {
+    transform: translateY(calc(100% + 16px));
+  }
+}
