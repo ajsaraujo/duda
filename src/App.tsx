@@ -59,7 +59,11 @@ function App() {
   }
 
   function showToast(message: string, okButtonLabel: string = "Tá bem") {
-    setToast({ visible: true, message, okButtonLabel });
+    hideToast();
+
+    setTimeout(() => {
+      setToast({ visible: true, message, okButtonLabel });
+    }, 600);
   }
 
   return (
