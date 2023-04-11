@@ -1,4 +1,4 @@
-import { areOdd } from "./are-odd";
+import { areOdd } from "./areOdd";
 
 describe("areOdd()", () => {
   it("should return true if the numbers are odd", () => {

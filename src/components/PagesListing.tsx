@@ -1,5 +1,5 @@
 import "../App.css";
-import { areOdd } from "../utils/are-odd";
+import { areOdd } from "../utils/areOdd";
 import { formatPageList } from "../utils/formatPageList";
 
 export function PagesListing(props: { pages: number[] }) {
