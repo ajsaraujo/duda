@@ -55,7 +55,7 @@ function App() {
   }
 
   function hideToast() {
-    setToast({ visible: false, message: "", okButtonLabel: "" });
+    setToast({ ...toast, visible: false });
   }
 
   function showToast(message: string, okButtonLabel: string = "Tá bem") {

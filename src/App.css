@@ -187,3 +187,25 @@ button {
   margin: 0 auto;
   height: 24px;
 }
+
+.toast-transition-enter {
+  opacity: 0;
+}
+
+.toast-transition-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.toast-transition-exit {
+  opacity: 1;
+}
+
+.toast-transition-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.toast-transition-exit-done {
+  opacity: 0;
+}
