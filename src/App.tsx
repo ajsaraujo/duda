@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import "./App.css";
 import { PagesListing } from "./components/PagesListing";
 import { listPages } from "./utils/listPages";
+import { InitialForm } from "./components/InitialForm";
 
-type Inputs = {
+export type Inputs = {
   firstPage: string;
   lastPage: string;
 };
@@ -61,34 +62,11 @@ function App() {
         </header>
 
         <div className="middle-container">
-          <div className="form">
-            <div className="form-field">
-              <label htmlFor="firstPage">Primeira página</label>
-              <input
-                id="firstPage"
-                value={inputs.firstPage}
-                onChange={handlePageChange("firstPage")}
-                autoComplete="none"
-              ></input>
-            </div>
-
-            <div className="form-field">
-              <label htmlFor="lastPage">Última página</label>
-              <input
-                id="lastPage"
-                value={inputs.lastPage}
-                onChange={handlePageChange("lastPage")}
-                autoComplete="none"
-              ></input>
-            </div>
-
-            <button
-              className="primary-button list-pages"
-              onClick={handleSubmit}
-            >
-              Listar páginas
-            </button>
-          </div>
+          <InitialForm
+            inputs={inputs}
+            handlePageChange={handlePageChange}
+            handleSubmit={handleSubmit}
+          ></InitialForm>
 
           <div>
             <Result submitted={submitted} inputs={inputs}></Result>
