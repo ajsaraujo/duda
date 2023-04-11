@@ -14,6 +14,7 @@ export function Toast(props: {
     <CSSTransition
       nodeRef={nodeRef}
       in={visible}
+      mountOnEnter={true}
       timeout={1000}
       classNames="toast-transition"
     >
