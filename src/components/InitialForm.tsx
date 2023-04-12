@@ -1,5 +1,6 @@
 import { Inputs } from "../App";
 import "../App.css";
+import "./InitialForm.css";
 
 export function InitialForm(props: {
   inputs: Inputs;
@@ -11,34 +12,35 @@ export function InitialForm(props: {
   const { inputs, handlePageChange, handleSubmit } = props;
 
   return (
-    <>
-      <div className="form">
-        <div className="form-field">
-          <label htmlFor="firstPage">Primeira página</label>
-          <input
-            id="firstPage"
-            value={inputs.firstPage}
-            onChange={handlePageChange("firstPage")}
-            autoComplete="off"
-            inputMode="numeric"
-          ></input>
-        </div>
-
-        <div className="form-field">
-          <label htmlFor="lastPage">Última página</label>
-          <input
-            id="lastPage"
-            value={inputs.lastPage}
-            onChange={handlePageChange("lastPage")}
-            autoComplete="off"
-            inputMode="numeric"
-          ></input>
-        </div>
-
-        <button className="primary-button list-pages" onClick={handleSubmit}>
-          Listar páginas
-        </button>
+    <div className="initial-form-container">
+      <div className="form-field">
+        <label htmlFor="firstPage">Primeira página</label>
+        <input
+          id="firstPage"
+          value={inputs.firstPage}
+          onChange={handlePageChange("firstPage")}
+          autoComplete="off"
+          inputMode="numeric"
+        ></input>
       </div>
-    </>
+
+      <div className="form-field">
+        <label htmlFor="lastPage">Última página</label>
+        <input
+          id="lastPage"
+          value={inputs.lastPage}
+          onChange={handlePageChange("lastPage")}
+          autoComplete="off"
+          inputMode="numeric"
+        ></input>
+      </div>
+
+      <button
+        className="primary-button list-pages-button"
+        onClick={handleSubmit}
+      >
+        Listar páginas
+      </button>
+    </div>
   );
 }

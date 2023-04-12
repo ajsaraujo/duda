@@ -1,0 +1,41 @@
+.initial-form-container {
+  padding-top: 48px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.form-field label {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.form-field input {
+  max-width: 238px;
+  height: 54px;
+  border-radius: 8px;
+  /* border-color: var(--medium-grey); */
+}
+
+.form-field input:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px var(--medium-pink);
+}
+
+@media (max-width: 500px) {
+  .form-field input {
+    max-width: 100px;
+  }
+
+  .parent-container {
+    padding: 32px;
+  }
+}
+
+.list-pages-button {
+  margin-top: 32px;
+}
