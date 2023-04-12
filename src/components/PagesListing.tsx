@@ -1,4 +1,5 @@
 import "../App.css";
+import "./PagesListing.css";
 import { areOdd } from "../utils/areOdd";
 import { copyToClipboard } from "../utils/copyToClipboard";
 import { formatPageList } from "../utils/formatPageList";
@@ -35,7 +36,11 @@ export function PagesListing(props: {
       </div>
 
       <button className="round-button" onClick={copyPageList}>
-        <img src={icon} className="white-icon icon"></img>
+        <img
+          src={icon}
+          className="white-icon icon"
+          alt="Copy to clipboard icon"
+        ></img>
       </button>
     </div>
   );
