@@ -7,6 +7,7 @@ export function Toast(props: {
   okButtonLabel: string;
   onClickOk: () => void;
 }) {
+  // TO DO: Extract styles from App.css
   const { message, visible, okButtonLabel, onClickOk } = props;
   const nodeRef = useRef(null);
 

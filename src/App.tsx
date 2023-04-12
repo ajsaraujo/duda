@@ -10,6 +10,8 @@ export type Inputs = {
 };
 
 function App() {
+  // TO DO: Extract Main Component and styles
+
   const [inputs, setInputs] = useState<Inputs>({
     firstPage: "",
     lastPage: "",
