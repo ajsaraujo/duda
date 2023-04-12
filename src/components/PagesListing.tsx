@@ -10,6 +10,7 @@ export function PagesListing(props: {
   showToast: (message: string) => void;
   hideToast: () => void;
 }) {
+  // TO DO: Inline variables?
   const label = areOdd(props.pages) ? "Ímpares" : "Pares";
   const labelAndQuantity = `${label} (${props.pages.length})`;
   const formattedPageList = formatPageList(props.pages);
@@ -21,6 +22,7 @@ export function PagesListing(props: {
     copyToClipboard(fullPageList);
     props.showToast(`As páginas ${label.toLowerCase()} foram copiadas.`);
 
+    // TO DO: Make sure the timeout is refresh
     if (timeout) {
       timeout.refresh();
     } else {

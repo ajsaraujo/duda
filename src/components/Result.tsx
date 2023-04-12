@@ -1,6 +1,7 @@
 import { Inputs } from "../App";
 import { listPages } from "../utils/listPages";
 import { PagesListing } from "./PagesListing";
+import "./Result.css";
 
 export function Result(props: {
   submitted: boolean;

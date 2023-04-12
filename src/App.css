@@ -48,6 +48,12 @@ button {
   height: 24px;
 }
 
+.text-secondary {
+  font-weight: 600;
+  color: var(--light-grey);
+  font-size: 14px;
+}
+
 .center-parent-container {
   display: flex;
   justify-content: center;
@@ -84,26 +90,6 @@ button {
   width: 100%;
   padding: 20px;
   font-weight: 700;
-}
-
-.text-secondary {
-  font-weight: 600;
-  color: var(--light-grey);
-  font-size: 14px;
-}
-
-.listing-pages {
-  margin-top: 16px;
-  margin-bottom: 32px;
-  text-align: center;
-}
-
-.reset-button {
-  margin-top: 40px;
-}
-
-.first-pages-listing {
-  margin-bottom: 24px;
 }
 
 .toast {
